@@ -23,7 +23,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post('/signin',signin.handleSignIn(db, bcrypt)) ;   //SIGNIN
+app.get('/',(req,res) => { res.send('it is working !') });
+
+app.post('/signin',signin.handleSignIn(db, bcrypt));   //SIGNIN
 
 app.post('/register',(req,res) => { register.handleRegister(req, res, db, bcrypt) });   //REGISTER
 
