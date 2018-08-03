@@ -33,6 +33,6 @@ app.put('/image',(req, res) => { image.handleImage(req, res, db) }); //IMAGE-ENT
 
 app.post('/imageurl',(req, res) => { image.handleApiCall(req, res) }); //API CALL
 
-app.listen(3001,()=> {
-	console.log('app is working on port 3001');
+app.listen(process.env.PORT || 300,()=> {
+	console.log(`app is working on port ${process.env.PORT}`);
 });
